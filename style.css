@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@100;200;400;450;500;600;700&display=swap');
+
+
+
+
+body
+{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to right,rgb(109, 33, 119),rgb(114, 51, 121) );
+}
+.main-container
+{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    font-family: Rubik, sans-serif;
+    background-image: url('./src/backgroundimg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items:center;
+    justify-content:space-evenly;
+}
+#background-left
+{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: -70px;
+    bottom: -50px;
+}
+#background-right
+{
+    width: 550px;
+    height: 550px;
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+.info
+{
+    width: 100%;
+    max-width: 1117px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 9;
+    font-family: Rubik, sans-serif;
+    font-weight: normal;
+    color: #ffffffef;
+    position: absolute;
+    top: 180px;
+}
+.info-title
+{
+    top:0;
+    width: 420px;
+}
+
+.info-title h1 
+{ 
+    width: 400px;
+    font-weight: 450;
+    font-size: 45px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.info-title p
+{
+    font-weight: 30; 
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+.info-submit
+{
+    width: 100%;
+    position: relative;
+}
+.info-submit input
+{
+    width: 100%;
+    height: 60px;
+    border-radius: 10px;
+    font-family: Rubik, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #ffffffef;
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.014) ;
+    background: rgba(138, 121, 138, 0.11);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    padding-left: 10px;
+    
+
+
+}
+.info-submit input::placeholder
+{
+    font-family: Rubik, sans-serif;
+    font-size: 15px;
+    font-weight: 200;
+    color: #747474;
+    line-height: 15px;
+    
+ 
+    
+}
+.info-submit button
+{
+    width: 100px;
+    height: 45px;
+    border-radius: 6px;
+    font-family: Rubik, sans-serif;
+    font-weight: 450;
+    font-size: 15px;
+    color: #ffffffdc;
+    background-color: rgb(109, 33, 119);
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 11px;
+    right: 0;
+}
+
+.card
+{
+    position: relative;
+    width: 406px;
+    height: 251px;
+    transform-style: preserve-3d;
+    perspective: 800px;
+}
+.card .face
+{
+    position: absolute;
+    top: 20%;
+    right: 250px;
+    width: 80%;
+    height: 80%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.116);
+    border-radius: 15px;
+    background: rgba(109, 33, 119, 0.521);
+    backdrop-filter: blur(5px);
+    transform-style: preserve-3d;
+    transition: 1s;
+    
+}
+.card:hover .face.front
+{
+    transform: rotateY(180deg)
+}
+.card .face.back
+{
+    transform: rotateY(180deg)
+}
+.card:hover .face.back
+{
+    transform: rotateY(360deg)
+}
+.card .face.front::before
+{
+    content:'';
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 45px;
+    height: 45px;
+    background: #F79E1B;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+.card .face.front::after
+{
+    content:'';
+    position: absolute;
+    top: 12px;
+    right: 40px;
+    width: 45px;
+    height: 45px;
+    background: #EB001B;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+.card .face.front .debit
+{
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    left: 30px;
+    bottom: 20px;
+
+}
+.card .face.front .chip
+{
+    position: absolute;
+    height: 50px;
+    width: 60px;
+    top: 60px;
+    left: 25px;
+
+}
+.card .face.front .cardHolder
+{
+    position: absolute;
+    left: 110px;
+    bottom: 32px;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #ffffff;
+    opacity: 0.7;
+}
+.card .face.front .nfc
+{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    top: 75px;
+    left: 80px;
+}
+.card .face.back .blackbar
+{
+    position: absolute;
+    width: 100%;
+    height:40px;
+    background:rgba(133, 132, 132, 0.808);
+    top: 12px;
+}
+.card .face.back .goldsimbol
+{
+    content:'';
+    position: absolute;
+    top: 80px;
+    left: 60px;
+    width: 20px;
+    height: 35px;
+    background: #b6b3b3;
+    opacity: 1;
+}
+.card .face.back .goldsimbol::before
+{
+    content:'';
+    position: absolute;
+    left: 3px;
+    width: 40px;
+    height: 35px;
+    background: #b6b3b3;
+    border-radius: 50%;
+    
+}
+.card .face.back .goldsimbol::after
+{
+    content:'';
+    position: absolute;
+    left: -23px;
+    width: 40px;
+    height: 35px;
+    background: #b6b3b3;
+    border-radius: 50%;
+    
+}
+.card .face.back .gold
+{
+    position: absolute;
+    top: 40px;
+    left: 55px;
+    color: #fff;
+    font-weight: 200;
+    letter-spacing: 1px;
+    font-size: 12px;
+    
+    opacity: 0.3;
+}
+.card .face.back .number
+{
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: 15px;
+    
+    opacity: 0.7;
+}
+.card .face.back .member
+{
+    position: absolute;
+    bottom: 23px;
+    left: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 400;
+    font-size: 4px;
+    line-height: 1em;
+    text-align: left;
+    opacity: 0.7;
+}
+.card .face.back .member span:last-child
+{
+    margin-left: 5px;
+    font-size: 11px;
+    font-weight: 400;
+    
+}
+.card .face.back .valid
+{
+    position: absolute;
+    bottom: 23px;
+    left: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 400;
+    font-size: 4px;
+    line-height: 1em;
+    text-align: left;
+    opacity: 0.7;
+}
+.card .face.back .valid span:last-child
+{
+    margin-left: 5px;
+    font-size: 11px;
+    font-weight: 400;
+    
+}
+.card .face.back .code
+{
+    position: absolute;
+    bottom: 23px;
+    left: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 400;
+    font-size: 4px;
+    line-height: 1em;
+    text-align: left;
+    opacity: 0.7;
+}
+.card .face.back .code span:last-child
+{
+    margin-left: 5px;
+    font-size: 11px;
+    font-weight: 400;
+    
+}
